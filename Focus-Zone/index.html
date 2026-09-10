@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Zone by SMI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100 p-4 flex flex-col">
+    <div class="w-full flex-1 flex flex-col justify-center space-y-6">
+        <header class="flex flex-col md:flex-row md:justify-between md:items-center gap-3 bg-slate-900 border border-slate-800 rounded-xl p-6">
+            <div>
+                <h1 class="text-2xl font-bold text-white">Focus Zone</h1>
+                <p class="text-sm text-slate-400">Stay productive. Stay consistent.</p>
+            </div>
+            <div class="md:text-right">
+                <h2 id="greeting" class="text-lg font-medium text-white">Good Morning</h2>
+                <p id="clock" class="mt-1 text-sm font-medium text-white bg-slate-800 rounded-lg px-3 py-1 inline-block">
+                    00:00:00 AM
+                </p>
+            </div>
+        </header>
+        <main class="grid md:grid-cols-2 gap-4">
+            <!-- Todo section -->
+            <section class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="text-lg font-semibold text-white">Today's Priorities</h2>
+                    <span class="text-xs text-slate-400 bg-slate-800 rounded-full px-3 py-1">Max 3 tasks</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4">
+                    What's the most important thing you'll accomplish today?
+                </p>
+                <div class="flex gap-2 mb-4">
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="e.g. Complete JavaScript assignment"
+                        class="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-indigo-500 outline-none">
+
+                    <button id="add-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-lg px-4 py-2">
+                        Add
+                    </button>
+                </div>
+                <ul id="task-list" class="space-y-2"></ul>
+
+                <div id="no-tasks" class="text-center text-slate-500 py-8">
+                    <p class="text-sm font-medium text-slate-300">No tasks yet</p>
+                    <p class="text-xs">Add your first goal to get started.</p>
+                </div>
+            </section>
+            <!-- Timer section -->
+            <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-center">
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="text-lg font-semibold text-white">Focus Session</h2>
+                    <span class="text-xs text-slate-400 bg-slate-800 rounded-full px-3 py-1">30 min</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4">
+                    One session. One goal. Zero distractions.
+                </p>
+                <div id="timer" class="text-5xl font-bold text-center text-white my-4">30:00</div>
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <button id="start-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-lg px-4 py-2 w-24">Start</button>
+                    <button id="pause-btn" class="bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium rounded-lg px-4 py-2 w-24">Pause</button>
+                    <button id="reset-btn" class="bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium rounded-lg px-4 py-2 w-24">Reset</button>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-3 text-xs text-slate-400 italic text-center">
+                    Discipline is choosing what you want most over what you want now.
+                </div>
+            </section>
+        </main>
+        <footer class="text-center text-xs text-slate-500 bg-slate-900 border border-slate-800 rounded-xl p-3">
+            © 2026 Focus Zone — Designed &amp; developed by <span class="text-slate-300 font-medium">SMI</span>
+        </footer>
+    </div>
+    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 hidden bg-slate-800 border border-slate-700 text-white text-sm rounded-lg px-4 py-2.5 shadow-lg z-50"></div>
+    <script src="app.js"></script>
+</body>
+</html>
