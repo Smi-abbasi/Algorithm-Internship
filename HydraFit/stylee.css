@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg-color: #0b1224;
+    --card-color: #111a31;
+    --text-color: #f8fafc;
+    --primary-color: #168df5;
+    --border-color: rgba(203, 213, 225, 0.65);
+}
+body {
+    background: linear-gradient(135deg, #0b1224, #101a32);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+header {
+    width: 98%;
+    max-width: 1500px;
+    margin: 12px auto 18px;
+    padding: 22px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    background: rgba(17, 26, 49, 0.92);
+    box-shadow: 0 0 25px rgba(22, 141, 245, 0.08);
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.header-content h1 {
+    font-size: 38px;
+    margin-bottom: 5px;
+    font-weight: 800;
+    text-align: left;
+}
+.header-content p {
+    color: #94a3b8;
+    margin-bottom: 0;
+    text-align: left;
+}
+.brand p {
+    font-size: 16px;
+}
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+.header-message {
+    font-size: 17px;
+    color: #94a3b8;
+    font-style: italic;
+    margin: 0;
+}
+#themeBtn {
+    margin: 0;
+}
+.overview {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #273653;
+    text-align: center;
+}
+
+.overview h3 {
+    margin-bottom: 12px;
+    color: #38bdf8;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.overviewStats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overviewItem {
+    width: 180px;
+    text-align: center;
+}
+
+.overviewItem + .overviewItem {
+    border-left: 1px solid #334155;
+}
+
+.overviewItem strong {
+    display: block;
+    font-size: 26px;
+    color: var(--text-color);
+    margin-bottom: 3px;
+}
+
+.overviewItem span {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+main {
+    width: 98%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.card {
+    position: relative;
+    background: rgba(17, 26, 49, 0.92);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    padding: 22px;
+    overflow: hidden;
+    min-height: 360px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #1267d8, #1db8ed);
+}
+.card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.card h3 {
+    margin-top: 15px;
+}
+.card p {
+    color: #94a3b8;
+}
+.progress {
+    width: 100%;
+    height: 12px;
+    background: #1d2943;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 18px 0;
+}
+#waterProgress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #1267d8, #1db8ed);
+    border-radius: 20px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+button {
+    border: none;
+    padding: 11px 16px;
+    margin: 5px 3px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1267d8, #18aee9);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(24, 174, 233, 0.25);
+}
+button:active {
+    transform: translateY(0);
+}
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #0d162b;
+    color: var(--text-color);
+    outline: none;
+}
+input::placeholder {
+    color: #64748b;
+}
+input:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(22, 141, 245, 0.2);
+}
+#habitList > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 12px;
+    background: #0d162b;
+    border: 1px solid #273653;
+    border-radius: 10px;
+}
+#habitList span:first-child {
+    flex: 1;
+    font-weight: bold;
+}
+#habitList button {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+#habitList button:last-child {
+    background: #ef4444;
+}
+#habitList button:last-child:hover {
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.2);
+}
+#waterPercentage {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+#waterMessage {
+    margin: 8px 0;
+    font-weight: bold;
+}
+footer {
+    width: 98%;
+    max-width: 1500px;
+    margin: 16px auto;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+#smi{
+    color:var(--text-color)
+}
+body.light-mode {
+    --bg-color: #eef3f9;
+    --card-color: #ffffff;
+    --text-color: #0f172a;
+    --primary-color: #0284c7;
+    --border-color: #cbd5e1;
+
+    background: #eef3f9;
+}
+body.light-mode .card,
+body.light-mode header {
+    background: #ffffff;
+}
+body.light-mode input,
+body.light-mode select,
+body.light-mode #habitList > div {
+    background: #f8fafc;
+}
+.tip {
+    margin-top: 25px;
+    padding: 12px;
+    border-left: 3px solid var(--primary-color);
+    background: rgba(22, 141, 245, 0.08);
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+#resetWater,
+#resetCalories {
+    background: #286468;
+}
+@media (max-width: 1000px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .brand,
+    .header-content h1,
+    .header-content p,
+    .header-right {
+        text-align: center;
+    }
+    .header-right {
+        align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    header {
+        width: 94%;
+        margin: 10px auto;
+        padding: 20px 15px;
+    }
+    .brand h1 {
+        font-size: 30px;
+    }
+    .header-message {
+        font-size: 14px;
+    }
+    #themeBtn {
+        width: 100%;
+    }
+    main {
+        width: 92%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .card {
+        padding: 20px;
+    }
+    .card h2 {
+        font-size: 21px;
+    }
+    button {
+        padding: 10px 13px;
+    }
+    .overview {
+        gap: 15px;
+    }
+    .overviewStats {
+        gap: 5px;
+    }
+    .overviewItem {
+        width: 33%;
+    }
+    .overviewItem strong {
+        font-size: 22px;
+    }
+    .overviewItem span {
+        font-size: 12px;
+    }
+}

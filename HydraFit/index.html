@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydraFit - Daily Tracker</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+
+<body>
+    <header>
+    <div class="header-content">
+        <div class="brand">
+            <h1>💧 HydraFit </h1>
+            <p>Stay hydrated. Build habits. Keep moving.</p>
+        </div>
+        <div class="header-right">
+            <p class="headerMessage">Small progress every day leads to big results.</p>
+            <button id="themeBtn">🌙 Dark Mode</button>
+        </div>
+    </div>
+    <div class="overview">
+        <h3>Today's Overview</h3>
+        <div class="overviewStats">
+            <div class="overviewItem">
+                <strong id="headerWater">0%</strong>
+                <span>💧 Water</span>
+            </div>
+            <div class="overviewItem">
+                <strong id="headerHabits">0/4</strong>
+                <span>🔥 Habits</span>
+            </div>
+            <div class="overviewItem">
+                <strong id="headerCalories">0</strong>
+                <span>⚡ Calories</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="card">
+            <h2>💧 Hydration</h2>
+            <p>
+                <span id="waterAmount">0</span> /
+                <span id="waterGoal">2500</span> ml
+            </p>
+            <div class="progress">
+                <div id="waterProgress"></div>
+            </div>
+            <p id="waterPercentage">0%</p>
+            <p id="waterMessage"></p>
+            <button id="add250">+ 250ml (Cup)</button>
+            <button id="add500">+ 500ml (Bottle)</button>
+            <button id="resetWater">Reset</button>
+            <p class="tip" id="waterTip">
+                💧 Stay hydrated to keep your energy and focus up.
+            </p>  
+        </section>
+
+        <section class="card">
+            <h2>🔥 Habit Tracker</h2>
+            <input 
+                type="text" 
+                id="habitInput" 
+                placeholder="Enter a habit"
+            >
+            <button id="addHabit">Add Habit</button>
+
+            <p id="habitWarning"></p>
+
+            <div id="habitList"></div>
+            <p class="tip" id="habitTip">
+               💡 Small habits repeated daily create lasting results.
+            </p> 
+        </section>
+
+
+        <section class="card">
+            <h2>⚡ Active Calories</h2>
+
+            <label for="activity">Activity</label>
+            <select id="activity">
+                <option value="11">Running - 11 kcal/min</option>
+                <option value="8">Cycling - 8 kcal/min</option>
+                <option value="4">Yoga - 4 kcal/min</option>
+            </select>
+
+           <label for="duration">Duration (minutes)</label>
+            <input
+                type="number"
+                id="duration"
+                placeholder="Duration in minutes"
+                min="1"
+            >
+
+            <button id="calculateCalories">
+                Calculate & Add
+            </button>
+            <button id="resetCalories">Reset</button>
+
+            <h3>
+                Total: <span id="calorieTotal">0</span> kcal
+            </h3>
+            <p class="tip" id="calorieTip">
+                ⚡ Every active minute counts. Keep moving!
+            </p>
+        </section>
+
+    </main>
+    <footer>
+<p>© 2026 HydraFit • Designed & Developed by <strong id="smi">SMI</strong>.</p>
+</footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
