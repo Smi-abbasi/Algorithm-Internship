@@ -9,7 +9,7 @@ The project focuses on practicing core **HTML, CSS, and JavaScript** concepts wh
 
 ## 📸 Project Preview
 
-![HydraFit Preview](https://smi-abbasi.github.io/HydraFit/)
+🔗 **Live site:** [HydraFit-Daily Tracker](https://sami-ullah-akhtar.netlify.app/)
 
 ## ✨ Features
 
